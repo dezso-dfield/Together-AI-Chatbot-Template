@@ -1,41 +1,50 @@
-Usage
+## Usage
+
 Follow these steps to get your Together AI Chatbot up and running:
 
-1. Obtain Your Together AI API Key
+### 1. Obtain Your Together AI API Key
 
-Register/Log In: Visit the Together AI website and log in or create an account.
+* **Register/Log In**: Visit the [Together AI website](https://www.together.ai/) and log in or create an account.
+* **Generate Key**: Navigate to your API Keys section (usually in your dashboard or settings) and generate a new API key.
+* **Copy Key**: Copy the generated API key.
 
-Generate Key: Navigate to your API Keys section (usually in your dashboard or settings) and generate a new API key.
+### 2. Configure Your `.env` File
 
-Copy Key: Copy the generated API key.
+* **Create `.env`**: In the root directory of your project, create a file named `.env`.
+* **Add API Key**: Open `.env` and add your API key:
 
-2. Configure Your .env File
+    ```
+    TOGETHER_API_KEY=YOUR_TOGETHER_AI_API_KEY
+    ```
 
-Create .env: In the root directory of your project, create a file named .env.
+    Replace `YOUR_TOGETHER_AI_API_KEY` with the key you copied.
 
-Add API Key: Open .env and add your API key:
+### 3. Define Your Chatbot's Persona in `prompt.txt`
 
-TOGETHER_API_KEY=YOUR_TOGETHER_AI_API_KEY
+* **Create `prompt.txt`**: In the same directory as your Python script, create a file named `prompt.txt`.
+* **Insert Prompt**: Paste your desired chatbot persona and instructions (like the "Coach Max" prompt) into this `prompt.txt` file. This content will define your chatbot's behavior and tone.
 
-Replace YOUR_TOGETHER_AI_API_KEY with the key you copied.
+### 4. Run the Chatbot
 
-3. Define Your Chatbot's Persona in prompt.txt
+* **Install Dependencies**: Make sure you have the necessary Python libraries installed. If you have a `requirements.txt` file, use:
 
-Create prompt.txt: In the same directory as your Python script, create a file named prompt.txt.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Insert Prompt: Paste your desired chatbot persona and instructions (like the "Coach Max" prompt) into this prompt.txt file. This content will define your chatbot's behavior and tone.
+    Otherwise, you can install them individually:
 
-4. Run the Chatbot
+    ```bash
+    pip install python-dotenv together gradio
+    ```
 
-Install Dependencies: Make sure you have the necessary Python libraries installed:
+* **Execute Script**: Run your main Python script from your terminal:
 
-pip install -r requirements.txt
+    ```bash
+    python3 main.py
+    ```
 
-Execute Script: Run your main Python script from your terminal:
-
-python3 main.py
-
-(Replace your_chatbot_script_name.py with the actual name of your Python file, e.g., app.py or main.py).
+    (Replace `main.py` with the actual name of your Python file, e.g., `app.py` or `your_chatbot_script_name.py`).
 
 Your Gradio chatbot interface will then launch in your web browser, allowing you to interact with your AI assistant!
 
